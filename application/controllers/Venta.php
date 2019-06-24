@@ -118,7 +118,7 @@ class Venta extends CI_Controller {
 		echo "apellidos:".$apellidos." nro de doc:".$ndoc." idusuario:".$idusuario." idcliente:".$idcliente." total:".$total." fecha".$fecha."<br>";		
 		//2 guardar datos de la venta	
 		$dventas=["fecha"=>$fecha,"id_cliente"=>$idcliente,"id_usuario"=>$idusuario,"numero_doc"=>$ndoc,"total"=>$total,"estado"=>true];
-		$this->modelventas->guardar($dventas);
+		$this->modelventas->adicionar($dventas);
 		$idventa=$this->modelventas->obtid($ndoc);
 		//3 guardar los registros de ventas
 		//obtener el idventa con el nro de doc_venta
@@ -129,9 +129,9 @@ class Venta extends CI_Controller {
 			echo "cantidad".$cantidad[$i]." ";
 			echo "monto".$monto[$i]."<br>";
 			$detallev=["producto_id"=>$idprod[$i],"precio"=>$precio[$i],"cantidad"=>$cantidad[$i],"importe"=>$monto[$i],"venta_id"=>$idventa];//ndoc
-			$this->modeldetalle->adicionar($detallev);//se guarda en la base de datos
+			$this->modeldetalle->guardar($detallev);//se guarda en la base de datos
 		}	
-
+			
 	}
 	public function guardarventa($ndoc,$idusuario,$idcliente,$total,$fecha){
 		$data=["fecha"=>$fecha,"id_cliente"=>$idcliente,"id_usuario"=>$idusuario,"total"=>$total,"numero_doc"=>$ndoc,"estado"=>true];
