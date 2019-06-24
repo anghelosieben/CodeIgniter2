@@ -15,7 +15,7 @@ class Modelventas extends CI_Model {
 	  $row=$num->row();
 	  return $row->id_venta;
 	}
-	public function guardar($data)
+	public function adicionar($data)
 	{
 		$this->db->insert("ventas",$data);
 	}
