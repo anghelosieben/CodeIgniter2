@@ -129,8 +129,9 @@ class Venta extends CI_Controller {
 			echo "cantidad".$cantidad[$i]." ";
 			echo "monto".$monto[$i]."<br>";
 			$detallev=["producto_id"=>$idprod[$i],"precio"=>$precio[$i],"cantidad"=>$cantidad[$i],"importe"=>$monto[$i],"venta_id"=>$idventa];//ndoc
-			$this->modeldetalle->guardar($detallev);
-		}		
+			$this->modeldetalle->guardar($detallev);//se guarda en la base de datos
+		}	
+			
 	}
 	public function guardarventa($ndoc,$idusuario,$idcliente,$total,$fecha){
 		$data=["fecha"=>$fecha,"id_cliente"=>$idcliente,"id_usuario"=>$idusuario,"total"=>$total,"numero_doc"=>$ndoc,"estado"=>true];
