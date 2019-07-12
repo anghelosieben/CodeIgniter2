@@ -60,14 +60,12 @@
               <p><strong>NUMERO DE DOCUMENTO: </strong>
                 <?php 
                   foreach ($num->result() as $row)
-                        echo ($row->numero_doc+1)."<input type='hidden' name='ndoc' value='".($row->numero_doc+1)."'>"; 
-
-                     //echo " fechaa: ".date('d-m-o ');
-                     //echo "<input type='text' value='".date('d-m-o ')."'>"
+                        echo ($row->numero_doc+1)."<input type='hidden' name='ndoc' value='".($row->numero_doc+1)."'>";                      
                 ?>
+                
               </p>
                 <input type="hidden" name="idusuario" value="<?php echo $this->session->userdata('id');?>">            
-              
+                <?php echo "<input type='hidden' name='fecha' value='".date('d-m-o')."'>"; ?>
               <div>                                
                 <table class="table table-striped table-responsive">
                   <thead>
@@ -87,7 +85,7 @@
                       <td></td>
                       <td></td>                      
                       <td><label for="">total a pagar</label></td>
-                      <td><input id="total" name="total" type="text" value="0" disabled=""></td>
+                      <td><input type="text" id="total" name="total" type="text" value="0" readonly></td>
                     </tr>
                   </tfoot>
                 </table>
@@ -98,7 +96,6 @@
               </div>
               </form>
             </div>
-            
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -108,8 +105,6 @@
       <!-- /.row -->
     </section>
     <div class="container">
-  
-  
 </div>
 </div>
 <!-- Content Wrapper. Contains page content fin del contenido-->
