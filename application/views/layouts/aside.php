@@ -70,9 +70,9 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url();?>venta/"><i class="fa fa-circle-o"></i>agregar venta</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          <ul class="treeview-menu">            
+            <li><a href="<?php echo base_url();?>venta/listar"><i class="fa fa-circle-o"></i>Ventas</a></li>
+            <li><a href="<?php echo base_url();?>venta/"><i class="fa fa-circle-o"></i>Realizar Venta</a></li>
           </ul>
         </li>      
         <li class="treeview">
