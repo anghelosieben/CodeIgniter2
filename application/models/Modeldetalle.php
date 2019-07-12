@@ -11,5 +11,10 @@ class Modeldetalle extends CI_Model {
 	{
 		$this->db->insert("detalle_ventas",$data);
 	}
+	public function mostrardetalle($ventaid)
+	{
+		$query=$this->db->query("SELECT * FROM detalle_ventas d,ventas v,productos p,dpersonales dp WHERE d.venta_id=v.id_venta and d.producto_id=p.id_producto and v.id_cliente=dp.id_dpersonales");
+		return $query;
+	}
 }
 ?>
